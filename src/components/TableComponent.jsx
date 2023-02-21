@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context/CryptoContext";
 
 const TableComponent = () => {
-  let { cryptoData } = useGlobalContext();
+  let { cryptoData, currency } = useGlobalContext();
   console.log(cryptoData);
 
   return (
@@ -65,7 +65,7 @@ const TableComponent = () => {
                   <td className="py-4">
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
-                      currency: "usd",
+                      currency: currency,
                     }).format(data?.current_price)}
                   </td>
                   <td className="py-4">{data?.total_volume}</td>
