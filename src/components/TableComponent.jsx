@@ -1,6 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../context/CryptoContext";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 const TableComponent = () => {
   let { cryptoData, currency } = useGlobalContext();
@@ -61,9 +62,17 @@ const TableComponent = () => {
                         src={data?.image}
                         alt={data?.name}
                       />
-                      <span>{data?.symbol}</span>
+                      <span>
+                        <Link to={`/${data?.id}`} className="cursor-pointer">
+                          {data?.symbol}
+                        </Link>
+                      </span>
                     </td>
-                    <td className="py-4">{data?.name}</td>
+                    <td className="py-4">
+                      <Link to={`/${data?.id}`} className="cursor-pointer">
+                        {data?.name}
+                      </Link>
+                    </td>
                     <td className="py-4">
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
