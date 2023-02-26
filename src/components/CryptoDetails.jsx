@@ -261,7 +261,7 @@ const CryptoDetails = () => {
                   )}
                 </div>
 
-                <div>
+                <div className="flex flex-col content-start">
                   <span className="text-sm capitalize text-gray-100">
                     sentiment
                   </span>
